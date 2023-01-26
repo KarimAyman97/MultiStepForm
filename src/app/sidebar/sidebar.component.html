@@ -1,0 +1,16 @@
+<div class="sidebar">
+  <div class="steps-container">
+    <app-sidebar-steps *ngIf="pageNumber===1" [number]=1 caption="YOUR INFO" active="active"></app-sidebar-steps>
+    <app-sidebar-steps *ngIf="pageNumber!=1" [number]=1 caption="YOUR INFO" active=""></app-sidebar-steps>
+
+    <app-sidebar-steps *ngIf="pageNumber===2" [number]=2 caption="SELECT PLAN" active="active"></app-sidebar-steps>
+    <app-sidebar-steps *ngIf="pageNumber!=2" [number]=2 caption="SELECT PLAN" active=""></app-sidebar-steps>
+
+    <app-sidebar-steps *ngIf="pageNumber===3" [number]=3 caption="ADD-ONS" active="active"></app-sidebar-steps>
+    <app-sidebar-steps *ngIf="pageNumber!=3" [number]=3 caption="ADD-ONS" active=""></app-sidebar-steps>
+
+    <app-sidebar-steps *ngIf="pageNumber===4" [number]=4 caption="SUMMARY" active="active"></app-sidebar-steps>
+    <app-sidebar-steps *ngIf="pageNumber!=4" [number]=4 caption="SUMMARY" active=""></app-sidebar-steps>
+
+  </div>
+</div>

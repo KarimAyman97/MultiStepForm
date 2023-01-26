@@ -1,0 +1,32 @@
+<div class="personal-container">
+  <h1 class="main-heading">Personal info</h1>
+  <p class="main-paragraph">Please provide your name, email address, and phone number.</p>
+  <form id="personal-form" (ngSubmit)="onSubmit()" [formGroup]="personalForm">
+    <label for="name">Name</label>
+    <span *ngIf="personalForm.get('name')?.errors?.['required'] &&(personalForm.get('name')?.touched ||personalForm.get('name')?.dirty)
+  ">This field is required</span>
+    <span *ngIf="personalForm.get('name')?.errors?.['minlength'] &&(personalForm.get('name')?.touched ||personalForm.get('name')?.dirty)
+  ">At least 3 characters</span>
+    <br>
+    <input id="name" type="text" placeholder="e.g. Stephen King" name="name" formControlName="name"
+      [ngClass]="{ 'is-invalid': personalForm.get('name')?.invalid && (personalForm.get('name')?.touched ||personalForm.get('name')?.dirty) }">
+    <br>
+    <label for="email">Email Address</label>
+    <span *ngIf="personalForm.get('email')?.errors?.['required'] &&(personalForm.get('email')?.touched ||personalForm.get('email')?.dirty)
+  ">This field is required</span>
+    <span *ngIf="personalForm.get('email')?.errors?.['email'] &&(personalForm.get('email')?.touched ||personalForm.get('email')?.dirty)
+  ">Invalid email</span>
+    <br>
+    <input id="email" type="email" placeholder="e.g. stephenking@lorem.com" name="e-mail" formControlName="email"
+      [ngClass]="{ 'is-invalid': personalForm.get('email')?.invalid && (personalForm.get('email')?.touched ||personalForm.get('email')?.dirty) }">
+    <br>
+    <label for="tel">Phone Number</label>
+    <span *ngIf="personalForm.get('phoneNumber')?.errors?.['required'] &&(personalForm.get('phoneNumber')?.touched ||personalForm.get('phoneNumber')?.dirty)
+  ">This field is required</span>
+    <span *ngIf="personalForm.get('phoneNumber')?.errors?.['pattern'] &&(personalForm.get('phoneNumber')?.touched ||personalForm.get('phoneNumber')?.dirty)
+  ">Only numbers are allowed</span>
+    <br>
+    <input id="tel" type="tel" placeholder="e.g. +1 234 567 890" name="telephone" formControlName="phoneNumber"
+      [ngClass]="{ 'is-invalid': personalForm.get('phoneNumber')?.invalid && (personalForm.get('phoneNumber')?.touched ||personalForm.get('phoneNumber')?.dirty) }">
+  </form>
+</div>

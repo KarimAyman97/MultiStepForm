@@ -1,0 +1,25 @@
+@import "../../styles.scss";
+
+.thank-you-container{
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+@media screen and (max-width: 600px) {
+    .thank-you-container{
+        width: 95%;
+        height: 80%;
+        margin: 0 auto;
+        background-color: $white;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0px 5px 10px $lightGray;
+        p{
+            line-height: 1.75rem;
+        }
+    }
+}

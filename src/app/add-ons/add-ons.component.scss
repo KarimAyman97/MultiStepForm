@@ -1,0 +1,100 @@
+@import "../../styles.scss";
+
+
+.addson-container
+{
+  background-color: $white;
+  .options
+  {
+    .option
+    {
+      display: flex;
+      align-items: center;
+      border: 1px solid $lightGray;
+      border-radius: 10px;
+      padding: .7rem 0;
+      margin: 1rem 0;
+      cursor: pointer;
+      transition: border 0.4s;
+      &:hover{
+          border: 1px solid $purplishBlue;
+      }
+      span{
+        padding: .4rem .4rem;
+        // background-color: $purplishBlue;  enable on active state
+        border: 1px solid $lightGray; // on active state remove
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width:fit-content;
+        height: fit-content;
+        margin: 0 1.3rem;
+        svg{
+            height:12px;
+            width: 12px;
+        }
+    }
+    .text-caption
+    {
+      width: 270px;
+      p{
+          margin: .35rem 0;
+          &:first-child{
+              font-weight: 700;
+              color: $marineBlue;
+          }
+          &:last-child{
+              font-size: 15px;
+              color: $coolGray;
+          }
+      }
+    }
+    .price{
+      color: $purplishBlue;
+    }
+  }
+  .active-option{
+    background-color: $alabaster;
+    border: 1px solid $purplishBlue;
+    .span-active{
+        background-color: $purplishBlue;
+        border: 1px solid $purplishBlue;
+    }
+  }
+
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  .addson-container{
+      width: 95%;
+      margin: 0 auto;
+      background-color: $white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0px 5px 10px $lightGray;
+  .options{
+      .option{
+          padding: 0.5rem 0;
+          margin: 0.5rem 0;
+          .text-caption{
+              width: 180px;
+              p{
+                  &:first-child{
+                      font-size: 14px;
+                  }
+                  &:last-child{
+                      font-size: 12px;
+                  }
+              }
+
+          }
+          .price{
+              font-size: 12px;
+          }
+      }
+  }
+}
+}

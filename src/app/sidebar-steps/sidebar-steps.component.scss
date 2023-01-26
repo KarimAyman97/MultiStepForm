@@ -1,0 +1,59 @@
+@import "../../styles.scss";
+
+.sidebar-step
+{
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  .number
+  {
+    display: flex;
+    padding:.5rem ;
+    justify-content: center;
+    align-items: center;
+    width:2rem ;
+    height:2rem ;
+    border: 1px solid $white;
+    border-radius: 50%;
+    font-weight: 500;
+    margin-right:1rem;
+    color:$white
+  }
+
+  .active
+  {
+    background-color: $lightBlue;
+    color:$marineBlue;
+    border:none;
+  }
+
+  .caption
+  {
+    display: flex;
+    flex-direction: column;
+    small
+    {
+      font-weight: 400;
+      color: $lightGray;
+    }
+    span{
+      color: $white;
+      font-weight: 500;
+  }
+  }
+}
+
+@media screen and (max-width:600px)
+{
+
+    .sidebar-step
+    {
+      .caption
+      {
+        display: none;
+      }
+    }
+}
+
+

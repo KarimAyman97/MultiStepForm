@@ -1,0 +1,185 @@
+@import "../../styles.scss";
+
+
+.plan-container
+{
+  background-color: $white;
+  .options
+  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+    gap:1rem;
+    .option{
+      border:1px solid $coolGray;
+      border-radius: 10px;
+      padding : 1rem;
+      width:140px;
+      height:auto ;
+      cursor: pointer;
+      &:hover{
+        border-color: $purplishBlue;
+      }
+
+      img
+      {
+        margin-bottom: 2rem;
+      }
+      p{
+        margin: .5rem;
+      }
+      .option-name
+      {
+        color:$marineBlue;
+        font-weight: 500;
+        font-size: 18px;
+      }
+      .option-plan
+      {
+        color:$coolGray;
+      }
+      .option-free-months
+      {
+        color:$marineBlue;
+        font-size: 13px;
+      }
+    }
+  }
+  .active
+  {
+    background-color: $magnolia;
+    border: 1px solid $purplishBlue;
+  }
+
+  .toggle-container
+  {
+    display: flex;
+    justify-content: center;
+    background-color: $alabaster;
+    padding: 1rem;
+    border-radius: 5px;
+
+    .subscribe-type
+    {
+      font-size:14px;
+      margin:0 1rem 0 1rem ;
+      color:$coolGray;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 18px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $marineBlue;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 12px;
+      width: 12px;
+      left: 4px;
+      bottom:3px;
+      background-color: white;
+      -webkit-transition: .2s;
+      transition: .2s;
+    }
+
+    input:checked + .slider {
+      background-color: $marineBlue;
+    }
+
+    input:focus + .slider {
+      box-shadow: 0 0 1px $marineBlue;
+    }
+
+    input:checked + .slider:before {
+      -webkit-transform: translateX(19px);
+      -ms-transform: translateX(19px);
+      transform: translateX(19px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+
+    .active_sub
+    {
+      color:$marineBlue
+    }
+  }
+  .error
+  {
+    color:$strawberryRed;
+    text-align: center;
+    font-weight: 700;
+  }
+
+}
+
+@media screen and (max-width: 900px) {
+  .options{
+      gap: 0.5rem;
+      justify-content: center;
+      .option{
+          padding: 0.5rem;
+      }
+  }
+}
+
+
+@media screen and (max-width:600px)
+{
+  .plan-container
+  {
+    width:95%;
+    margin:0 auto ;
+    background-color: $white;
+    padding:1rem;
+    border-radius: 10px;
+
+    .options
+    {
+      flex-direction: column;
+      justify-content: center;
+      align-items:center ;
+      margin:1rem 0 ;
+      .option
+      {
+          display: flex;
+          width:100%;
+          img{
+            margin-bottom: 0;
+          }
+          .data-container-in-small-devices{
+            margin-left: 1rem;
+        }
+      }
+    }
+  }
+}

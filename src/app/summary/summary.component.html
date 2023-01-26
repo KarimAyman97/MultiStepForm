@@ -1,0 +1,30 @@
+<div class="summary">
+  <h1 class="main-heading">Finishing up</h1>
+  <p class="main-paragraph">Double-check everything looks OK before confirming</p>
+  <div class="prices">
+    <div class="main-plan-with-price">
+      <div class="main-plan">
+        <p *ngIf="!yearlySub">{{currentPlan.name}} (Monthly)</p>
+        <p *ngIf="yearlySub">{{currentPlan.name}} (Yearly)</p>
+        <p class="gray-14px" (click)="toPageTwo()">Change</p>
+      </div>
+      <p *ngIf="!yearlySub" class="main-price">${{currentPlan.planPerMonth}}/mo</p>
+      <p *ngIf="yearlySub" class="main-price">${{currentPlan.planPerYear}}/yr</p>
+    </div>
+    <div *ngIf="AddsOn.length>0" class="add-ons">
+      <div *ngFor="let add of AddsOn" class="add-on-with-price">
+        <p class="add-on gray-14px">{{add.name}}</p>
+        <p *ngIf="!yearlySub" class="add-on-price">+${{add.monthFee}}/mo</p>
+        <p *ngIf="yearlySub" class="add-on-price">+${{add.yearFree}}/yr</p>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!yearlySub" class="total-container">
+    <p class="gray-14px">Total (per month)</p>
+    <p class="total-price">${{monthTotal()}}/mo</p>
+  </div>
+  <div *ngIf="yearlySub" class="total-container">
+    <p class="gray-14px">Total (per year)</p>
+    <p class="total-price">${{yearTotal()}}/yr</p>
+  </div>
+</div>

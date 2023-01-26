@@ -1,0 +1,19 @@
+<div class="addson-container">
+  <h1 class="main-heading">Pick add-ons</h1>
+  <p class="main-paragraph">Add-ons help enhance your gaming experience.</p>
+  <div class="options">
+    <div *ngFor="let option of options; let i=index;" [ngClass]="{'active-option': option.checked===true}"
+      class="option" (click)="changeOptions(option,i)">
+      <span [ngClass]="{'span-active' :  option.checked===true }"><svg xmlns="http://www.w3.org/2000/svg" width="12"
+          height="9" viewBox="0 0 12 9">
+          <path fill="none" stroke="#FFF" stroke-width="2" d="m1 4 3.433 3.433L10.866 1" />
+        </svg></span>
+      <div class="text-caption">
+        <p class="top-text">{{option.name}}</p>
+        <p class="bottom-text">{{option.caption}}</p>
+      </div>
+      <p *ngIf="!YearlySub" class="price">+${{option.monthFee}}/mo</p>
+      <p *ngIf="YearlySub" class="price">+${{option.yearFree}}/yr</p>
+    </div>
+  </div>
+</div>

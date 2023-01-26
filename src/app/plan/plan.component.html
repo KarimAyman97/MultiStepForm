@@ -1,0 +1,25 @@
+<div class="plan-container">
+  <h1 class="main-heading">Select your plan</h1>
+  <p class="main-paragraph">You have the option of monthly or yearly billing.</p>
+  <div class="options">
+    <div *ngFor="let option of options; let i=index;" [ngClass]="{'active': i === selectedOption}" class="option"
+      (click)="selectOption(option,i)">
+      <img src="{{option.imageUrl}}" alt="{{option.imageAlt}}">
+      <div class="data-container-in-small-devices">
+        <p class="option-name">{{option.name}}</p>
+        <p *ngIf="!YearlySub" class="option-plan">${{option.planPerMonth}}/mo</p>
+        <p *ngIf="YearlySub" class="option-plan">${{option.planPerYear}}/yr</p>
+        <p *ngIf="YearlySub" class="option-free-months">{{option.freeMonthsPerYear}} months free</p>
+      </div>
+    </div>
+  </div>
+  <div class="toggle-container">
+    <label [ngClass]="{'active_sub':!YearlySub}" for="sub_type" class="subscribe-type">Monthly</label>
+    <label class="switch">
+      <input id="sub_type" type="checkbox" (click)="setPlanType()">
+      <span class="slider round"></span>
+    </label>
+    <label [ngClass]="{'active_sub':YearlySub}" for="sub_type" class="subscribe-type">Yearly</label>
+  </div>
+  <p class="error" *ngIf="displayError">Please select a plan!</p>
+</div>
