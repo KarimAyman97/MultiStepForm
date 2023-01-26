@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class StepsService {
-  currentPage = new BehaviorSubject<number>(4);
+  currentPage = new BehaviorSubject<number>(1);
 
   getCurrentPage() {
     return this.currentPage;
